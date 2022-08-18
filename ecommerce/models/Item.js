@@ -1,12 +1,11 @@
 const Product = require('./Product')
-const User = require('./User')
 
 class Item {
 
-    constructor(id, product = Product, user = User, amount) {
+    constructor(id, product = Product, UserId, amount) {
         this.id = id
         this.product = product
-        this.user = user
+        this.UserId = UserId
         this.amount = amount
     }
 
@@ -14,10 +13,14 @@ class Item {
         const item = {
             id: this.id,
             product: this.product,
-            user: this.user,
+            UserId: this.UserId,
             amount: this.amount,           
         }
         console.log(item)
+    }
+
+    valueItem() {
+        return this.amount * this.product.value
     }
 }
 

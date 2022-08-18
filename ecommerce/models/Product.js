@@ -20,6 +20,16 @@ class Product {
         }
         console.log(product)
     }
+
+    setInventory(quantity) {
+        this.inventory = this.inventory - quantity
+        return this.inventory
+    }
+
+    setCancelShoppingCart(quantity) {
+        this.inventory = this.inventory + quantity
+        return this.inventory
+    }
 }
 
 module.exports = Product
